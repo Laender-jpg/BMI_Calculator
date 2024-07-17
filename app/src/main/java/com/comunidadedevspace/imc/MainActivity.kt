@@ -1,5 +1,6 @@
 package com.comunidadedevspace.imc
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -40,7 +41,17 @@ class MainActivity : AppCompatActivity() {
 
                 val alturaQ2 = altura * altura
                 val resultado = peso / alturaQ2
-                println("Resultado: " + resultado)
+
+                // Navegar para a proxima tela
+                // Criar o layout da segunda tela
+                // Passar dados para a proxima tela
+
+                // Para chamar a proxima tela, usamos INTENT (Classe do proprio Android)
+
+                val intent = Intent(this, ResultActivity::class.java)
+                intent.putExtra(KEY_RESULT_BMI, resultado)
+                startActivity(intent)
+
             }
         }
     }
